@@ -1,0 +1,25 @@
+{
+  "name": "geek-music-player",
+  "version": "1.0.0",
+  "description": "A vanilla JS PWA music player based on iTunes API",
+  "main": "index.html",
+  "bin": {
+    "geek-music": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "http-server .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "music-player",
+    "pwa",
+    "vanilla-js",
+    "itunes-api"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "opener": "^1.5.2"
+  }
+}
