@@ -800,6 +800,7 @@
             <button class="btn btn-icon" onclick="searchMusic()" title="搜索">🔍</button>
             <button class="btn btn-icon" onclick="randomSearch()" title="随机探索">🎲</button>
             <button class="btn btn-icon" onclick="searchByWeather()" title="看天听歌">🌤️</button>
+            <button class="btn btn-icon" onclick="searchPenguin()" title="企鹅音乐">🐧</button>
         </div>
     </header>
 
@@ -960,6 +961,12 @@
         // 随机搜索
         function randomSearch() {
             $('search-input').value = keywords[Math.floor(Math.random() * keywords.length)];
+            searchMusic();
+        }
+
+        // 搜索企鹅
+        function searchPenguin() {
+            $('search-input').value = 'penguin';
             searchMusic();
         }
 
