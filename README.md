@@ -26,7 +26,7 @@
 - **📜 动态歌词 & 百科**：
   - 自动获取歌词 (Lyrics.ovh)。
   - 自动获取歌手维基百科简介。
-  - 歌词缺失时自动展示“治愈系猫咪”图片作为替补。
+  - 歌词缺失时自动展示"治愈系猫咪"图片作为替补。
 - **💬 趣味弹幕**：模拟实时评论，生成随机用户信息和骚话（使用 RandomUser 和 一言 API）。
 - **🎨 极客 UI 设计**：
   - 玻璃拟态 (Glassmorphism) 风格。
@@ -58,25 +58,34 @@
 ```bash
 git clone git@github.com:yuanguangshan/autoMusicPlayer.git
 cd autoMusicPlayer
-启动本地服务器 (推荐使用 http-server)
-code
-Bash
+```
+
+2. 启动本地服务器 (推荐使用 http-server)
+
+```bash
 npx http-server .
-访问 http://localhost:8080
-🔌 API 鸣谢 (Credits)
+```
+
+3. 访问 http://localhost:8080
+
+## 🔌 API 鸣谢 (Credits)
+
 本项目依赖以下免费公开 API，感谢这些服务的提供者：
-功能	API 服务提供商
-音乐搜索/试听	iTunes Search API
-歌词获取	Lyrics.ovh
-歌手百科	Wikipedia API
-地理位置	GeoJS
-天气数据	Open-Meteo
-随机用户头像	RandomUser.me
-随机语录	Hitokoto (一言) & Kanye.rest
-猫咪图片	The Cat API
-📂 目录结构 (Structure)
-code
-Text
+
+| 功能 | API 服务提供商 |
+|------|----------------|
+| 音乐搜索/试听 | iTunes Search API |
+| 歌词获取 | Lyrics.ovh |
+| 歌手百科 | Wikipedia API |
+| 地理位置 | GeoJS |
+| 天气数据 | Open-Meteo |
+| 随机用户头像 | RandomUser.me |
+| 随机语录 | Hitokoto (一言) & Kanye.rest |
+| 猫咪图片 | The Cat API |
+
+## 📂 目录结构 (Structure)
+
+```
 geek-music/
 ├── index.html        # 应用主入口、UI 结构与核心 JS 逻辑
 ├── sw.js             # Service Worker (缓存策略与离线支持)
@@ -86,10 +95,14 @@ geek-music/
 │   ├── icon-192x192.png
 │   └── ...
 └── README.md         # 说明文档
-⚠️ 注意事项
-音频预览：iTunes API 提供的音频通常为 30 秒片段，而非完整歌曲。
-跨域问题：代码中已处理大部分 API 的跨域请求，但部分 API 可能会因网络环境不稳定导致请求失败。
-HTTPS：PWA (Service Worker) 功能必须在 localhost 或 HTTPS 环境下才能生效。
-📄 开源协议 (License)
-MIT License © 2023 yuanguangshan
 ```
+
+## ⚠️ 注意事项
+
+- 音频预览：iTunes API 提供的音频通常为 30 秒片段，而非完整歌曲。
+- 跨域问题：代码中已处理大部分 API 的跨域请求，但部分 API 可能会因网络环境不稳定导致请求失败。
+- HTTPS：PWA (Service Worker) 功能必须在 localhost 或 HTTPS 环境下才能生效。
+
+## 📄 开源协议 (License)
+
+MIT License © 2023 yuanguangshan

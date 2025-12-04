@@ -1,0 +1,8 @@
+node_modules/
+.git/
+.github/
+.wrangler/
+*.log
+.DS_Store
+.editorconfig
+.eslintrc

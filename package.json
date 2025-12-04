@@ -15,10 +15,21 @@
     "music-player",
     "pwa",
     "vanilla-js",
-    "itunes-api"
+    "itunes-api",
+    "music",
+    "player",
+    "web-player"
   ],
-  "author": "Your Name",
+  "author": "yuanguangshan",
   "license": "MIT",
+  "homepage": "https://github.com/yuanguangshan/autoMusicPlayer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuanguangshan/autoMusicPlayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuanguangshan/autoMusicPlayer/issues"
+  },
   "dependencies": {
     "http-server": "^14.1.1",
     "opener": "^1.5.2"
