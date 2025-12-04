@@ -20,7 +20,7 @@
 
 ## ✨ 特性 (Features)
 
-- **🎧 音乐探索**：基于 iTunes Search API，支持歌手、歌曲搜索及随机关键词探索。
+- **🎧 音乐探索**：基于 iTunes Search API 和 YouTube Music API，支持歌手、歌曲搜索及随机关键词探索，iTunes提供试听片段，YouTube提供完整曲目播放。
 - **📱 PWA 支持**：支持安装到主屏幕，拥有独立的 App 体验，并在 Service Worker 的加持下具备离线缓存能力（核心文件、图片、API 缓存策略）。
 - **⛈️ 看天听歌**：集成 Open-Meteo 与 GeoJS，根据你当地的天气情况智能推荐心情歌单（晴天、雨天、雷暴等）。
 - **📜 动态歌词 & 百科**：
@@ -33,7 +33,7 @@
   - 动态背景颜色提取与模糊处理。
   - 响应式网格布局，适配移动端与桌面端。
   - 丝滑的 CSS 动画交互。
-- **🔗 智能跳转**：在 Apple 设备上支持唤起 Apple Music 原生应用，非 Apple 设备降级为网页跳转。
+- **🔗 智能跳转**：在 Apple 设备上支持唤起 Apple Music 原生应用，非 Apple 设备支持在YouTube应用中打开音乐。
 
 ## 🛠️ 技术栈 (Tech Stack)
 
@@ -75,6 +75,7 @@ npx http-server .
 | 功能 | API 服务提供商 |
 |------|----------------|
 | 音乐搜索/试听 | iTunes Search API |
+| 音乐搜索/完整播放 | YouTube Music API (via api.yuangs.cc) |
 | 歌词获取 | Lyrics.ovh |
 | 歌手百科 | Wikipedia API |
 | 地理位置 | GeoJS |
@@ -99,7 +100,7 @@ geek-music/
 
 ## ⚠️ 注意事项
 
-- 音频预览：iTunes API 提供的音频通常为 30 秒片段，而非完整歌曲。
+- 音频预览：iTunes API 提供的音频通常为 30 秒片段，而非完整歌曲；YouTube Music API 提供完整歌曲播放。
 - 跨域问题：代码中已处理大部分 API 的跨域请求，但部分 API 可能会因网络环境不稳定导致请求失败。
 - HTTPS：PWA (Service Worker) 功能必须在 localhost 或 HTTPS 环境下才能生效。
 
