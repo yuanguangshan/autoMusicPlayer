@@ -1,6 +1,6 @@
 {
   "name": "geek-music-player",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A vanilla JS PWA music player based on iTunes API",
   "main": "index.html",
   "bin": {
