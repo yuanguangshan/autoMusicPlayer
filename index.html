@@ -2545,7 +2545,7 @@
                 // 搜索 iTunes API (如果未指定只用YouTube)
                 try {
                     // 使用 Go backend 代理 iTunes API (same endpoint for compatibility)
-                    const res = await fetch(`http://api.yuangs.cc/api/music/search/song?q=${encodeURIComponent(query)}&limit=48`);
+                    const res = await fetch(`http://www.yuangs.cc/api/music/search/song?q=${encodeURIComponent(query)}&limit=48`);
                     if (res.ok) {
                         const iTunesData = await res.json();
                         iTunesResults = iTunesData.results || [];
@@ -2562,7 +2562,7 @@
             if (!isAppleOnly) {
                 // 搜索 YouTube through Go backend
                 try {
-                    const youTubeRes = await fetch(`http://api.yuangs.cc/api/youtubeapi/search/song?q=${encodeURIComponent(query)}&limit=48`);
+                    const youTubeRes = await fetch(`http://www.yuangs.cc/api/youtubeapi/search/song?q=${encodeURIComponent(query)}&limit=48`);
                     if (youTubeRes.ok) {
                         const youTubeJson = await youTubeRes.json();
                         // console.log('YouTube API 响应:', youTubeJson); // Debug log
@@ -2996,7 +2996,7 @@
         // YouTube 音乐 API 搜索函数 - using local backend proxy
         async function searchYouTubeMusic(query) {
             try {
-                const response = await fetch(`http://api.yuangs.cc/youtubeapi/api/search/song?q=${encodeURIComponent(query)}&limit=10`);
+                const response = await fetch(`http://www.yuangs.cc/youtubeapi/api/search/song?q=${encodeURIComponent(query)}&limit=10`);
                 if (response.ok) {
                     const data = await response.json();
                     console.log('YouTube search API 响应:', data); // Debug log
@@ -4796,7 +4796,7 @@
                 if (state.currentTrack && state.currentTrack.trackId &&
                     (state.currentTrack.kind === 'youtube' || state.currentTrack.previewUrl?.includes('youtube.com'))) {
                     try {
-                        const youTubeLyricsRes = await fetch(`http://api.yuangs.cc/api/youtubeapi/lyrics/${state.currentTrack.trackId}`);
+                        const youTubeLyricsRes = await fetch(`http://www.yuangs.cc/api/youtubeapi/lyrics/${state.currentTrack.trackId}`);
                         if (youTubeLyricsRes.ok) {
                             const youTubeLyricsData = await youTubeLyricsRes.json();
 
