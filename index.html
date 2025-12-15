@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>广山音乐</title>
 
     <!-- PWA  核心配置 -->
@@ -40,7 +39,7 @@
             --grad-1: var(--primary);
             --grad-2: #6366f1;
             --grad-3: #ec4899;
-            
+
             --safe-top: env(safe-area-inset-top);
             --safe-bottom: env(safe-area-inset-bottom);
         }
@@ -193,13 +192,15 @@
         }
 
         /* Ensure input elements work properly in PWA */
-        input, textarea, select {
+        input,
+        textarea,
+        select {
             -webkit-user-select: auto;
             -moz-user-select: auto;
             -ms-user-select: auto;
             user-select: auto;
             -webkit-touch-callout: default;
-            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
         }
 
         /* 自定义滚动条 */
@@ -478,7 +479,7 @@
             transition: all 0.3s ease;
             border: 1px solid transparent;
             position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .song-options {
@@ -488,10 +489,10 @@
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
             display: flex;
             align-items: center;
@@ -523,7 +524,7 @@
             background: var(--card-hover);
             transform: translateY(-4px);
             border-color: var(--glass-border);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .song-card:active {
@@ -534,16 +535,39 @@
             border-color: var(--primary);
             box-shadow: 0 0 20px rgba(var(--primary), 0.3);
         }
-        
+
         /* Fix for box-shadow color parsing if primary is hex */
-        [data-theme="default"] .song-card.playing { box-shadow: 0 0 20px rgba(29, 185, 84, 0.3); }
-        [data-theme="light"] .song-card.playing { box-shadow: 0 0 20px rgba(250, 35, 59, 0.3); }
-        [data-theme="ocean"] .song-card.playing { box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); }
-        [data-theme="cyber"] .song-card.playing { box-shadow: 0 0 20px rgba(217, 70, 239, 0.3); }
-        [data-theme="sunset"] .song-card.playing { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); }
-        [data-theme="midnight"] .song-card.playing { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
-        [data-theme="forest"] .song-card.playing { box-shadow: 0 0 20px rgba(74, 222, 128, 0.3); }
-        [data-theme="retro"] .song-card.playing { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+        [data-theme="default"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
+        }
+
+        [data-theme="light"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(250, 35, 59, 0.3);
+        }
+
+        [data-theme="ocean"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+        }
+
+        [data-theme="cyber"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(217, 70, 239, 0.3);
+        }
+
+        [data-theme="sunset"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+
+        [data-theme="midnight"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        [data-theme="forest"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+        }
+
+        [data-theme="retro"] .song-card.playing {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
 
         .song-cover {
             width: 100%;
@@ -648,6 +672,7 @@
             .results-columns {
                 gap: 12px;
             }
+
             .results-column .grid {
                 grid-template-columns: 1fr;
             }
@@ -806,8 +831,16 @@
         }
 
         @keyframes scroll-left {
-            0%, 10% { transform: translateX(0); }
-            90%, 100% { transform: translateX(var(--scroll-distance, -50%)); }
+
+            0%,
+            10% {
+                transform: translateX(0);
+            }
+
+            90%,
+            100% {
+                transform: translateX(var(--scroll-distance, -50%));
+            }
         }
 
         /* 主控制区 */
@@ -835,8 +868,13 @@
         }
 
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
         }
 
         .player-controls {
@@ -863,9 +901,14 @@
             opacity: 0.8;
             border: 1px solid transparent;
         }
-        
-        [data-theme="default"] .ctrl-btn { border-color: rgba(255,255,255,0.1); }
-        [data-theme="light"] .ctrl-btn { border-color: rgba(0,0,0,0.05); }
+
+        [data-theme="default"] .ctrl-btn {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="light"] .ctrl-btn {
+            border-color: rgba(0, 0, 0, 0.05);
+        }
 
         .ctrl-btn:hover {
             background: var(--glass);
@@ -885,13 +928,13 @@
             color: white;
             font-size: 24px;
             opacity: 1;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .ctrl-btn.play:hover {
             background: var(--primary-dark);
             transform: scale(1.08);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* 进度条 */
@@ -917,9 +960,14 @@
             position: relative;
             overflow: hidden;
         }
-        
-        [data-theme="default"] .progress-bar { background: rgba(255,255,255,0.1); }
-        [data-theme="light"] .progress-bar { background: rgba(0,0,0,0.1); }
+
+        [data-theme="default"] .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        [data-theme="light"] .progress-bar {
+            background: rgba(0, 0, 0, 0.1);
+        }
 
         .progress-fill {
             height: 100%;
@@ -1069,15 +1117,15 @@
             background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             white-space: nowrap;
             animation: danmaku-slide linear forwards;
         }
-        
+
         [data-theme="light"] .danmaku-item {
             background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .danmaku-avatar {
@@ -1096,12 +1144,19 @@
             font-size: 13px;
             color: white;
         }
-        
-        [data-theme="light"] .danmaku-text { color: #333; }
+
+        [data-theme="light"] .danmaku-text {
+            color: #333;
+        }
 
         @keyframes danmaku-slide {
-            from { transform: translateX(0); }
-            to { transform: translateX(calc(-100% - 100vw)); }
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(-100% - 100vw));
+            }
         }
 
         /* 空状态 */
@@ -1147,7 +1202,9 @@
         }
 
         @keyframes loading-spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* 推荐标签样式 */
@@ -1346,7 +1403,7 @@
             background: var(--card);
             padding: 24px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
             z-index: 1000;
             min-width: 300px;
             border: 1px solid var(--glass-border);
@@ -1354,7 +1411,7 @@
             pointer-events: none;
             transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        
+
         .theme-modal.visible {
             opacity: 1;
             pointer-events: auto;
@@ -1364,13 +1421,13 @@
         .theme-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 999;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.2s ease;
         }
-        
+
         .theme-overlay.visible {
             opacity: 1;
             pointer-events: auto;
@@ -1416,8 +1473,8 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            border: 2px solid rgba(255,255,255,0.2);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .theme-name {
@@ -1466,7 +1523,9 @@
     <header class="header">
         <div class="search-box">
             <div class="search-input-container" id="search-input-container" style="display: none;">
-                <input type="search" class="search-input" id="search-input" placeholder="歌手/歌曲..." inputmode="text" enterkeyhint="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+                <input type="search" class="search-input" id="search-input" placeholder="歌手/歌曲..." inputmode="text"
+                    enterkeyhint="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                    required>
                 <button class="search-clear-btn" id="search-clear-btn" title="清空搜索" style="display: none;">✕</button>
             </div>
             <button class="btn btn-icon" onclick="smartRandomSearch()" title="智能探索">🎲</button>
@@ -1696,16 +1755,16 @@
         // 主题管理器
         const ThemeManager = {
             STORAGE_KEY: 'music_theme',
-            
+
             init: () => {
                 const savedTheme = localStorage.getItem(ThemeManager.STORAGE_KEY) || 'default';
                 ThemeManager.set(savedTheme);
             },
-            
+
             set: (theme) => {
                 document.documentElement.setAttribute('data-theme', theme);
                 localStorage.setItem(ThemeManager.STORAGE_KEY, theme);
-                
+
                 // 更新选中状态
                 document.querySelectorAll('.theme-btn').forEach(btn => {
                     if (btn.dataset.themeBtn === theme) {
@@ -1715,7 +1774,7 @@
                     }
                 });
             },
-            
+
             get: () => {
                 return localStorage.getItem(ThemeManager.STORAGE_KEY) || 'default';
             }
@@ -2545,7 +2604,7 @@
                 // 搜索 iTunes API (如果未指定只用YouTube)
                 try {
                     // 使用 Go backend 代理 iTunes API (same endpoint for compatibility)
-                    const res = await fetch(`http://www.yuangs.cc/api/music/search/song?q=${encodeURIComponent(query)}&limit=48`);
+                    const res = await fetch(`https://www.yuangs.cc/api/music/search/song?q=${encodeURIComponent(query)}&limit=48`);
                     if (res.ok) {
                         const iTunesData = await res.json();
                         iTunesResults = iTunesData.results || [];
@@ -2562,7 +2621,7 @@
             if (!isAppleOnly) {
                 // 搜索 YouTube through Go backend
                 try {
-                    const youTubeRes = await fetch(`http://www.yuangs.cc/api/youtubeapi/search/song?q=${encodeURIComponent(query)}&limit=48`);
+                    const youTubeRes = await fetch(`https://www.yuangs.cc/api/youtubeapi/search/song?q=${encodeURIComponent(query)}&limit=48`);
                     if (youTubeRes.ok) {
                         const youTubeJson = await youTubeRes.json();
                         // console.log('YouTube API 响应:', youTubeJson); // Debug log
@@ -2996,7 +3055,7 @@
         // YouTube 音乐 API 搜索函数 - using local backend proxy
         async function searchYouTubeMusic(query) {
             try {
-                const response = await fetch(`http://www.yuangs.cc/youtubeapi/api/search/song?q=${encodeURIComponent(query)}&limit=10`);
+                const response = await fetch(`https://www.yuangs.cc/youtubeapi/api/search/song?q=${encodeURIComponent(query)}&limit=10`);
                 if (response.ok) {
                     const data = await response.json();
                     console.log('YouTube search API 响应:', data); // Debug log
@@ -3621,45 +3680,45 @@
             }
         }
 
-            // 打开 YouTube 歌曲在 YouTube 应用或网页中
-            function openYouTubeApp(videoId, trackName, artistName) {
-                const webUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        // Android Intent (Chrome 推荐方式)
-        // S.browser_fallback_url 指定了如果没安装 App 跳转的地址
-        const androidIntent = `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.google.android.youtube;scheme=https;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
-        // iOS Scheme (不推荐，推荐直接用 webUrl，但在某些场景可用)
-        const iosScheme = `youtube://watch?v=${videoId}`;
+        // 打开 YouTube 歌曲在 YouTube 应用或网页中
+        function openYouTubeApp(videoId, trackName, artistName) {
+            const webUrl = `https://www.youtube.com/watch?v=${videoId}`;
+            // Android Intent (Chrome 推荐方式)
+            // S.browser_fallback_url 指定了如果没安装 App 跳转的地址
+            const androidIntent = `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.google.android.youtube;scheme=https;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
+            // iOS Scheme (不推荐，推荐直接用 webUrl，但在某些场景可用)
+            const iosScheme = `youtube://watch?v=${videoId}`;
 
-        // 1. 更精准的设备检测
-        const u = navigator.userAgent;
-        const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
-        // 兼容 iPad Desktop Mode 的检测
-        const isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            // 1. 更精准的设备检测
+            const u = navigator.userAgent;
+            const isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+            // 兼容 iPad Desktop Mode 的检测
+            const isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-        showToast(`正在打开 "${trackName}" - ${artistName}`);
+            showToast(`正在打开 "${trackName}" - ${artistName}`);
 
-        if (isAndroid) {
-            // Android 最佳实践: 使用 Intent
-            // 如果已安装 App，系统直接打开；没安装，Chrome 会自动处理 fallback 到网页
-            window.location.href = androidIntent;
-        } else if (isIOS) {
-            // iOS 最佳实践: 直接访问 Universal Link (HTTPS)
-            // iOS 系统会自动拦截这个链接并询问是否在 App 中打开
-            // 强行用 Scheme 往往体验不好，且很难准确判断是否安装
-            window.location.href = webUrl;
-            
-            // --- 如果你非要强行尝试 Scheme (不推荐) ---
-            // window.location.href = iosScheme; 
-            // setTimeout(() => {
-            //    // iOS 上不能在 timeout 里 window.open，只能改变 location
-            //    window.location.href = webUrl; 
-            // }, 2000);
-            // ----------------------------------------
-        } else {
-            // 桌面端
-            window.open(webUrl, '_blank');
+            if (isAndroid) {
+                // Android 最佳实践: 使用 Intent
+                // 如果已安装 App，系统直接打开；没安装，Chrome 会自动处理 fallback 到网页
+                window.location.href = androidIntent;
+            } else if (isIOS) {
+                // iOS 最佳实践: 直接访问 Universal Link (HTTPS)
+                // iOS 系统会自动拦截这个链接并询问是否在 App 中打开
+                // 强行用 Scheme 往往体验不好，且很难准确判断是否安装
+                window.location.href = webUrl;
+
+                // --- 如果你非要强行尝试 Scheme (不推荐) ---
+                // window.location.href = iosScheme; 
+                // setTimeout(() => {
+                //    // iOS 上不能在 timeout 里 window.open，只能改变 location
+                //    window.location.href = webUrl; 
+                // }, 2000);
+                // ----------------------------------------
+            } else {
+                // 桌面端
+                window.open(webUrl, '_blank');
+            }
         }
-    }
         // 打开 YouTube 歌曲在 YouTube Music 应用或网页中
         function openYouTubeMusic(videoId, trackName, artistName) {
             const webUrl = `https://music.youtube.com/watch?v=${videoId}`;
@@ -4127,7 +4186,7 @@
                         playerContainer.id = 'youtube-player-container';
                         document.body.appendChild(playerContainer);
                     }
-                    
+
                     // Always ensure correct styling to avoid display:none issues
                     playerContainer.style.position = 'absolute';
                     playerContainer.style.top = '-9999px';
@@ -4226,8 +4285,8 @@
                     // 检测是否为移动设备
                     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-                    
-                    
+
+
 
                     // 立即尝试播放（在用户交互的上下文中）
                     try {
@@ -4796,7 +4855,7 @@
                 if (state.currentTrack && state.currentTrack.trackId &&
                     (state.currentTrack.kind === 'youtube' || state.currentTrack.previewUrl?.includes('youtube.com'))) {
                     try {
-                        const youTubeLyricsRes = await fetch(`http://www.yuangs.cc/api/youtubeapi/lyrics/${state.currentTrack.trackId}`);
+                        const youTubeLyricsRes = await fetch(`https://www.yuangs.cc/api/youtubeapi/lyrics/${state.currentTrack.trackId}`);
                         if (youTubeLyricsRes.ok) {
                             const youTubeLyricsData = await youTubeLyricsRes.json();
 
@@ -5647,7 +5706,7 @@
             } else {
                 searchContainer.style.display = 'flex';
                 // 延迟聚焦以解决PWA环境下的渲染问题
-        setTimeout(() => searchInput.focus(), 100); // 关键：延迟聚焦以解决PWA问题
+                setTimeout(() => searchInput.focus(), 100); // 关键：延迟聚焦以解决PWA问题
             }
         }
 
@@ -6021,4 +6080,5 @@
         }
     </script>
 </body>
+
 </html>
