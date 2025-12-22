@@ -5742,9 +5742,15 @@
                 }
 
                 // 使用AIProxy的音乐解释API - 更适合分析音乐
+                // Using OpenAI-compatible format with gemini-flash-lite-latest as the default model
                 const requestBody = {
-                    text: `请分析这首歌曲：歌曲名《${title}》，演唱者：${artist}。请从音乐专业角度进行分析，包括但不限于：\n\n1. 音乐风格 (Genre) - 确定音乐类型和流派\n2. 情绪情感 (Mood) - 表达的情感色彩\n3. 节拍速度 (Tempo) - 音乐的快慢节奏\n4. 音乐调性 (Key) - 主要调性特征\n5. 能量水平 (Energy) - 音乐的活力强度\n6. 舞蹈性 (Danceability) - 是否适合跳舞\n7. 器乐比重 (Instrumentalness) - 器乐与人声的比例\n8. 原声比重 (Acousticness) - 是否偏向原声\n\n请提供全面且专业的音乐分析，包含曲式结构、旋律特色、编曲手法等。`,
-                    model: "gemini-flash-latest"
+                    model: "gemini-flash-lite-latest",
+                    messages: [
+                        {
+                            role: "user",
+                            content: `请分析这首歌曲：歌曲名《${title}》，演唱者：${artist}。请从音乐专业角度进行分析，包括但不限于：\n\n1. 音乐风格 (Genre) - 确定音乐类型和流派\n2. 情绪情感 (Mood) - 表达的情感色彩\n3. 节拍速度 (Tempo) - 音乐的快慢节奏\n4. 音乐调性 (Key) - 主要调性特征\n5. 能量水平 (Energy) - 音乐的活力强度\n6. 舞蹈性 (Danceability) - 是否适合跳舞\n7. 器乐比重 (Instrumentalness) - 器乐与人声的比例\n8. 原声比重 (Acousticness) - 是否偏向原声\n\n请提供全面且专业的音乐分析，包含曲式结构、旋律特色、编曲手法等。`
+                        }
+                    ]
                 };
 
                 const response = await fetch('https://aiproxy.want.biz/ai/explain', {
@@ -5768,9 +5774,12 @@
                 if (response.ok) {
                     const result = await response.json();
 
-                    // 解析AI返回的结果，根据提供的格式，应该有 explanation 字段
+                    // 解析AI返回的结果 - 优先处理OpenAI兼容格式，然后是原有格式
                     let aiAnalysis = '';
-                    if (typeof result === 'string') {
+                    if (result.choices && result.choices[0] && result.choices[0].message) {
+                        // OpenAI兼容格式
+                        aiAnalysis = result.choices[0].message.content;
+                    } else if (typeof result === 'string') {
                         aiAnalysis = result;
                     } else if (result.explanation) {
                         aiAnalysis = result.explanation;
@@ -5778,8 +5787,6 @@
                         aiAnalysis = result.text;
                     } else if (result.response) {
                         aiAnalysis = result.response;
-                    } else if (result.choices && result.choices[0] && result.choices[0].message) {
-                        aiAnalysis = result.choices[0].message.content;
                     } else {
                         // 如果返回格式不符合预期，使用原始结果
                         aiAnalysis = JSON.stringify(result);
